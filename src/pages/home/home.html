@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="car"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Автомобильные коды регионов РФ</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-searchbar placeholder="Имя региона или код" showCancelButton color="danger" (ionInput)="filterItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <p float-left style="margin-right:5px;">
+        <img src="{{item.img}}" style="width:20px;" alt="">
+      </p>
+      {{ item.name }}
+      <p float-right>
+        ({{item.code}})
+      </p>
+    </ion-item>
+  </ion-list>
+</ion-content>
